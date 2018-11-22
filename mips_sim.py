@@ -12,8 +12,8 @@ def hex_to_binary(input_file):
 	for line in input_file:
 		line = line.replace('\n', '')
 		line = line.replace('0x', '')
-		Instructions_in_hex.append(line)
 		line = format(int(line,16), "032b")
+		Instructions_in_hex.append(line)
 		Instructions.append(line)
 			
 def mips_simulation(Instructions, Instructions_in_hex):
@@ -29,7 +29,7 @@ def mips_simulation(Instructions, Instructions_in_hex):
 	fourcycles = 0
 	fivecycles = 0
 	
-	while(not(0)):
+	while True:
 		DIC += 1
 		fetch = Instructions[PC]
 		
