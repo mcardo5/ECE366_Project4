@@ -86,6 +86,7 @@ def mips_simulation(Instructions, Instructions_in_hex):
 			PC +=1
 			Cycle +=4
 			fourcycles +=1
+			imm = int(fetch[16:32],2)
 			
 			Registers[int(fetch[11:16],2)] = Registers[int(fetch[6:11],2)] + imm
 			
