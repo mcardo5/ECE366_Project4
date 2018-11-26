@@ -294,11 +294,12 @@ def main():
     while (True):
         print("Choose Instruction Memory to be used in the simulation")
         print("e.g. i_mem_A1")
-        #filename = input("Instruction Memory Filename: ")
+        filename = input("Instruction Memory Filename: ")
+        # For testing purposes
         #filename = "i_mem_A1.txt"
         #filename = "i_mem_A2.txt"
         #filename = "i_mem_B1.txt"
-        filename = "i_mem_B2.txt"
+        #filename = "i_mem_B2.txt"
 
         # Check if the file exist
         try:
