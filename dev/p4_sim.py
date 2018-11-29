@@ -42,6 +42,7 @@ def mips_lw(Rs, Rt, imm, d_mem, register, cache):
     hit = cache[len(cache) - 3]
     dmS4B2 = cache[0]
     dmS2B4 = cache[1]
+    faS2B4 = cache[2]
     saS2B8 = cache[3]
     # a. Direct Mapped, blk sz 4, # blk 2
     try:
@@ -52,46 +53,75 @@ def mips_lw(Rs, Rt, imm, d_mem, register, cache):
         register[Rt] = d_mem[mem_addr]
         valid = '0'
     tag = mem_addr_bin[0:11]
-    blk1 = mem_addr_bin[11:12]
-    offset1 = mem_addr_bin[12:len(mem_addr_bin)]
+    tagfa = mem_addr_bin[0:13]
+    blk1 = mem_addr_bin[11]
+    offset1 = mem_addr_bin[12:len(mem_addr_bin) - 2]
     blk2 = mem_addr_bin[11:13]
-    offset2 = mem_addr_bin[13:len(mem_addr_bin)]
+    offset2 = mem_addr_bin[13]
     set_idx = mem_addr_bin[11:13]
     if (access == 0):
         miss[0] = miss[0] + 1
         miss[1] = miss[1] + 1
-        saCache = {'': ''}
+        miss[2] = miss[2] + 1
+        miss[3] = miss[3] + 1
+        saCache_new = {'': ''}
         for i in range(0,4):
-            saCache[format(i, '02b')] = ['Empty', 'Empty']
-        saCache[set_idx][0] = tag
-        del saCache['']
+            saCache_new[format(i, '02b')] = ['Empty', 'Empty']
+        saCache_new[set_idx][0] = tag
+        del saCache_new['']
+        faCache_new = [tagfa, 'Empty', 'Empty', 'Empty']
     else:
+        # For DM1 Cache Setting
         if ((dmS4B2[access-1][3] == blk1) and (valid == '1') and (dmS4B2[access-1][2] == tag)):
             hit[0] = hit[0] + 1
         else:
             miss[0] = miss[0] + 1
         
+        # For DM2 Cache Setting
         if ((dmS2B4[access-1][3] == blk2) and (dmS2B4[access-1][1] == valid) and (dmS2B4[access-1][2] == tag)):
             hit[1] = hit[1] + 1
         else:
             miss[1] = miss[1] + 1
 
+        # For SA Cache Setting
         saCache = saS2B8[access-1][3]
+        saCache_new = {'': ''}
+        for i in range(0,4):
+            saCache_new[format(i, '02b')] = [saCache[format(i, '02b')][0], saCache[format(i, '02b')][1]]
+        del saCache_new['']
         if ((valid == '1') and ((saCache[set_idx][0] == tag) or (saCache[set_idx][1] == tag))):
             hit[3] = hit[3] + 1
         else:
-            #print('here {}'.format(access+1))
+            # Update Cache
             if (saCache[set_idx][0] == 'Empty'):
-                saCache[set_idx][0] = tag
+                saCache_new[set_idx][0] = tag
             elif (saCache[set_idx][1] == 'Empty'):
-                saCache[set_idx][1] = tag
+                saCache_new[set_idx][1] = tag
             else:
-                saCache[set_idx][0] = tag
+                saCache_new[set_idx][0] = tag
             miss[3] = miss[3] + 1
+
+        # For FA Cache Setting
+        faCache = faS2B4[access-1][2]
+        faCache_new = [faCache[0], faCache[1], faCache[2], faCache[3]]
+        if ((valid == '1') and ((faCache[0] == tagfa) or (faCache[1] == tagfa) or (faCache[2] == tagfa) or (faCache[3] == tagfa))):
+            hit[2] = hit[2] + 1
+        else:
+            # Update Cache
+            if (faCache[1] == 'Empty'):
+                faCache_new[1] = tagfa
+            elif (faCache[2] == 'Empty'):
+                faCache_new[2] = tagfa
+            elif (faCache[3] == 'Empty'):
+                faCache_new[3] = tagfa
+            else:
+                faCache_new[0] = tagfa
+            miss[2] = miss[2] + 1
         
     dmS4B2.append([mem_addr, valid, tag, blk1, offset1])
     dmS2B4.append([mem_addr, valid, tag, blk2, offset2])
-    saS2B8.append([mem_addr, valid, set_idx, saCache, offset2])
+    saS2B8.append([mem_addr, valid, set_idx, saCache_new, offset2])
+    faS2B4.append([mem_addr, valid, faCache_new, offset2])
 
     access = access + 1
     # Update record
@@ -100,6 +130,7 @@ def mips_lw(Rs, Rt, imm, d_mem, register, cache):
     cache[len(cache) - 3] = hit
     cache[0] = dmS4B2
     cache[1] = dmS2B4
+    cache[2] = faS2B4
     cache[3] = saS2B8
 
 def mips_beq(Rs, Rt, imm, pc, register):
@@ -296,7 +327,7 @@ def main():
         print("e.g. i_mem_A1")
         filename = input("Instruction Memory Filename: ")
         # For testing purposes
-        #filename = "i_mem_A1.txt"
+        filename = "i_mem_A1.txt"
         #filename = "i_mem_A2.txt"
         #filename = "i_mem_B1.txt"
         #filename = "i_mem_B2.txt"
@@ -305,6 +336,7 @@ def main():
         try:
             # Attempt to open file.
             i_mem = open(filename, "r")
+					
             print(filename + " opened successfully")
             
             # Read file.
@@ -395,8 +427,8 @@ def main():
         #disp_d_mem(d_mem)
         if (old_pc == pc):
             break
-
-    # Summary
+    
+	# Summary
     print('')
     print('-------------------------')
     print('---------Summary---------')
@@ -441,7 +473,7 @@ def main():
         print('\t\t\tValid bit: ' + cache[0][i][1])
         print('\t\t\tTag: ' + cache[0][i][2])
         print('\t\t\tBlk Index: {}'.format(int(cache[0][i][3], 2)))
-        print('\t\t\tOffset: {:.0f}'.format(int(cache[0][i][4], 2) / 4))
+        print('\t\t\tOffset: {:.0f}'.format(int(cache[0][i][4], 2)))
     print('\t\tNumber of Hits: {}'.format(hit[0]))
     print('\t\tNumber of Misses: {}'.format(miss[0]))
     print('\t\tHit Rate: {:.2f}%'.format((hit[0] / (hit[0] + miss[0]) * 100)))
@@ -453,11 +485,23 @@ def main():
         print('\t\t\tValid bit: ' + cache[1][i][1])
         print('\t\t\tTag: ' + cache[1][i][2])
         print('\t\t\tBlk Index: {}'.format(int(cache[1][i][3], 2)))
-        print('\t\t\tOffset: {:.0f}'.format(int(cache[1][i][4], 2) / 4))
+        print('\t\t\tOffset: {:.0f}'.format(int(cache[1][i][4], 2)))
     print('\t\tNumber of Hits: {}'.format(hit[1]))
     print('\t\tNumber of Misses: {}'.format(miss[1]))
     print('\t\tHit Rate: {:.2f}%'.format((hit[1] / (hit[1] + miss[1]) * 100)))
     print('\tc. Fully-Associated Cache, block size: 2 words, number of blocks: 4')
+    for i in range(0, len(cache[2])):
+        print('\t\tlw access: {}'.format(i+1))
+        print('\t\t\tMem Addr: ' + cache[2][i][0])
+        print('\t\t\tValid bit: ' + cache[2][i][1])
+        print('\t\t\tWay/Block 1 Tag: ' + cache[2][i][2][0])
+        print('\t\t\tWay/Block 2 Tag: ' + cache[2][i][2][1])
+        print('\t\t\tWay/Block 3 Tag: ' + cache[2][i][2][2])
+        print('\t\t\tWay/Block 4 Tag: ' + cache[2][i][2][3])
+        print('\t\t\tOffset: {:.0f}'.format(int(cache[2][i][3], 2)))
+    print('\t\tNumber of Hits: {}'.format(hit[2]))
+    print('\t\tNumber of Misses: {}'.format(miss[2]))
+    print('\t\tHit Rate: {:.2f}%'.format((hit[2] / (hit[2] + miss[2]) * 100)))
     print('\td. 2-Way Set-Associative Cache, block size: 2 words, number of blocks: 8, number of sets: 4')
     for i in range(0, len(cache[3])):
         print('\t\tlw access: {}'.format(i+1))
@@ -467,14 +511,17 @@ def main():
         print('\t\t\tSet Index: {}'.format(int(set_idx, 2)))
         print('\t\t\tWay A Tag: ' + cache[3][i][3][set_idx][0])
         print('\t\t\tWay B Tag: ' + cache[3][i][3][set_idx][1])
-        print('\t\t\tOffset: {:.0f}'.format(int(cache[1][i][4], 2) / 4))
+        print('\t\t\tOffset: {:.0f}'.format(int(cache[3][i][4], 2)))
     print('\t\tNumber of Hits: {}'.format(hit[3]))
     print('\t\tNumber of Misses: {}'.format(miss[3]))
     print('\t\tHit Rate: {:.2f}%'.format((hit[3] / (hit[3] + miss[3]) * 100)))
         
 
     print("Complete")
+    
+    
 
 
 if __name__ == '__main__':
     main()
+    
