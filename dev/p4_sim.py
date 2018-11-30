@@ -281,10 +281,15 @@ def init_reg(register):
 
 def disp_reg(register):
     # This functions displays the contents of the register.
+    regfile = open('regfile.txt', 'w')
     print("Registers")
     print('Number\tValue')
+    regfile.write("Registers\n")
+    regfile.write('Number\tValue\n')
     for i in range(0, len(register)):
         print(format(i, 'd') + '\t' + register[i])
+        regfile.write(format(i, 'd') + '\t\t' + register[i] + '\n')
+    regfile.close()
 
 def disp_i_mem(i_mem):
     print("Instruction Memory")
@@ -325,9 +330,9 @@ def main():
     while (True):
         print("Choose Instruction Memory to be used in the simulation")
         print("e.g. i_mem_A1")
-        filename = input("Instruction Memory Filename: ")
+        #filename = input("Instruction Memory Filename: ")
         # For testing purposes
-        #filename = "i_mem_A1.txt"
+        filename = "i_mem_A1.txt"
         #filename = "i_mem_A2.txt"
         #filename = "i_mem_B1.txt"
         #filename = "i_mem_B2.txt"
@@ -428,15 +433,27 @@ def main():
             break
 
     # Summary
+    out = open('output.txt', 'w')
     print('')
     print('-------------------------')
     print('---------Summary---------')
     print('-------------------------')
+
+    out.write('-------------------------\n')
+    out.write('---------Summary---------\n')
+    out.write('-------------------------\n\n')
+    
     print('PC: ' + pc)
     print('Dynamic Instruction Count: {}'.format(instr_count))
     print('')
     disp_reg(register)
     print('')
+
+    out.write('PC: ' + pc + '\n')
+    out.write('Dynamic Instruction Count: {}'.format(instr_count) + '\n\n')
+    regfile = open('regfile.txt', 'r')
+    out.write(regfile.read() + '\n')
+
     print('Multi-cycle MIPS CPU')
     multi_total = (multi_cpu[0]*3) + (multi_cpu[1]*4) + (multi_cpu[2]*5)
     print('\ti. Total number of cycles: {}'.format(multi_total))
@@ -460,7 +477,38 @@ def main():
     print('\t5 Cycle Instructions:')
     print('\t\tInstruction\t# Cycles\t% Cycle')
     print('\t\tlw\t\t{}\t\t{:.2f}%'.format(multi_instr[7]*5, ((multi_instr[7]*5) / multi_total) * 100))
+
+
+
+
+    out.write('Multi-cycle MIPS CPU\n')
+    out.write('\ti. Total number of cycles: {}\n'.format(multi_total))
+    out.write('\t\tInstruction Length\t\t# Cycles\t\t% Cycle\n')
+    out.write('\t\t3 Cycles\t\t\t\t{}\t\t\t\t{:.2f}%\n'.format(multi_cpu[0]*3, ((multi_cpu[0]*3) / multi_total) * 100))
+    out.write('\t\t4 Cycles\t\t\t\t{}\t\t\t\t{:.2f}%\n'.format(multi_cpu[1]*4, ((multi_cpu[1]*4) / multi_total) * 100))
+    out.write('\t\t5 Cycles\t\t\t\t{}\t\t\t\t{:.2f}%\n'.format(multi_cpu[2]*5, ((multi_cpu[2]*5) / multi_total) * 100))
+    out.write('\tii. Instruction Information\n')
+    out.write('\t3 Cycle Instructions:\n')
+    out.write('\t\tInstruction\t\t# Cycles\t\t% Cycle\n')
+    out.write('\t\tbeq\t\t\t\t{}\t\t\t\t{:.2f}%\n'.format(multi_instr[4]*3, ((multi_instr[4]*3) / multi_total) * 100))
+    out.write('\t\tbne\t\t\t\t{}\t\t\t\t{:.2f}%\n'.format(multi_instr[5]*3, ((multi_instr[5]*3) / multi_total) * 100))
+    out.write('\t4 Cycle Instructions:\n')
+    out.write('\t\tInstruction\t\t# Cycles\t\t% Cycle\n')
+    out.write('\t\tadd\t\t\t\t{}\t\t\t\t{:.2f}%\n'.format(multi_instr[0]*4, ((multi_instr[0]*4) / multi_total) * 100))
+    out.write('\t\tsub\t\t\t\t{}\t\t\t\t{:.2f}%\n'.format(multi_instr[1]*4, ((multi_instr[1]*4) / multi_total) * 100))
+    out.write('\t\txor\t\t\t\t{}\t\t\t\t{:.2f}%\n'.format(multi_instr[2]*4, ((multi_instr[2]*4) / multi_total) * 100))
+    out.write('\t\taddi\t\t\t{}\t\t\t\t{:.2f}%\n'.format(multi_instr[3]*4, ((multi_instr[3]*4) / multi_total) * 100))
+    out.write('\t\tslt\t\t\t\t{}\t\t\t\t{:.2f}%\n'.format(multi_instr[6]*4, ((multi_instr[6]*4) / multi_total) * 100))
+    out.write('\t\tsw\t\t\t\t{}\t\t\t\t{:.2f}%\n'.format(multi_instr[8]*4, ((multi_instr[8]*4) / multi_total) * 100))
+    out.write('\t5 Cycle Instructions:\n')
+    out.write('\t\tInstruction\t\t# Cycles\t\t% Cycle\n')
+    out.write('\t\tlw\t\t\t\t{}\t\t\t\t{:.2f}%\n'.format(multi_instr[7]*5, ((multi_instr[7]*5) / multi_total) * 100))
+
+
+
     print('Pipelined MIPS CPU')
+
+
     print('Cache Access Behavior')
     hit = cache[len(cache) - 3]
     miss = cache[len(cache) - 2]
@@ -514,6 +562,65 @@ def main():
     print('\t\tNumber of Hits: {}'.format(hit[3]))
     print('\t\tNumber of Misses: {}'.format(miss[3]))
     print('\t\tHit Rate: {:.2f}%'.format((hit[3] / (hit[3] + miss[3]) * 100)))
+
+
+
+
+    out.write('Cache Access Behavior\n')
+    out.write('\ta. Direct Mapped Cache, block size: 4 words, number of blocks: 2\n')
+    print('\tCache log\n')
+    for i in range(0, len(cache[0])):
+        out.write('\t\tlw access: {}\n'.format(i+1))
+        out.write('\t\t\tMem Addr: ' + cache[0][i][0] + '\n')
+        out.write('\t\t\tValid bit: ' + cache[0][i][1] + '\n')
+        out.write('\t\t\tTag: ' + cache[0][i][2] + '\n')
+        out.write('\t\t\tBlk Index: {}\n'.format(int(cache[0][i][3], 2)))
+        out.write('\t\t\tOffset: {:.0f}\n'.format(int(cache[0][i][4], 2)))
+    out.write('\t\tNumber of Hits: {}\n'.format(hit[0]))
+    out.write('\t\tNumber of Misses: {}\n'.format(miss[0]))
+    out.write('\t\tHit Rate: {:.2f}%\n'.format((hit[0] / (hit[0] + miss[0]) * 100)))
+    out.write('\tb. Direct Mapped Cache, block size: 2 words, number of blocks: 4\n')
+    out.write('\tCache log\n')
+    for i in range(0, len(cache[1])):
+        out.write('\t\tlw access: {}\n'.format(i+1))
+        out.write('\t\t\tMem Addr: ' + cache[1][i][0] + '\n')
+        out.write('\t\t\tValid bit: ' + cache[1][i][1] + '\n')
+        out.write('\t\t\tTag: ' + cache[1][i][2] + '\n')
+        out.write('\t\t\tBlk Index: {}\n'.format(int(cache[1][i][3], 2)))
+        out.write('\t\t\tOffset: {:.0f}\n'.format(int(cache[1][i][4], 2)))
+    out.write('\t\tNumber of Hits: {}\n'.format(hit[1]))
+    out.write('\t\tNumber of Misses: {}\n'.format(miss[1]))
+    out.write('\t\tHit Rate: {:.2f}%\n'.format((hit[1] / (hit[1] + miss[1]) * 100)))
+    out.write('\tc. Fully-Associated Cache, block size: 2 words, number of blocks: 4\n')
+    for i in range(0, len(cache[2])):
+        out.write('\t\tlw access: {}\n'.format(i+1))
+        out.write('\t\t\tMem Addr: ' + cache[2][i][0] + '\n')
+        out.write('\t\t\tValid bit: ' + cache[2][i][1] + '\n')
+        out.write('\t\t\tWay/Block 1 Tag: ' + cache[2][i][2][0] + '\n')
+        out.write('\t\t\tWay/Block 2 Tag: ' + cache[2][i][2][1] + '\n')
+        out.write('\t\t\tWay/Block 3 Tag: ' + cache[2][i][2][2] + '\n')
+        out.write('\t\t\tWay/Block 4 Tag: ' + cache[2][i][2][3] + '\n')
+        out.write('\t\t\tOffset: {:.0f}\n'.format(int(cache[2][i][3], 2)))
+    out.write('\t\tNumber of Hits: {}\n'.format(hit[2]))
+    out.write('\t\tNumber of Misses: {}\n'.format(miss[2]))
+    out.write('\t\tHit Rate: {:.2f}%\n'.format((hit[2] / (hit[2] + miss[2]) * 100)))
+    out.write('\td. 2-Way Set-Associative Cache, block size: 2 words, number of blocks: 8, number of sets: 4\n')
+    for i in range(0, len(cache[3])):
+        out.write('\t\tlw access: {}\n'.format(i+1))
+        out.write('\t\t\tMem Addr: ' + cache[3][i][0] + '\n')
+        out.write('\t\t\tValid bit: ' + cache[3][i][1] + '\n')
+        set_idx = cache[3][i][2]
+        out.write('\t\t\tSet Index: {}\n'.format(int(set_idx, 2)))
+        out.write('\t\t\tWay A Tag: ' + cache[3][i][3][set_idx][0] + '\n')
+        out.write('\t\t\tWay B Tag: ' + cache[3][i][3][set_idx][1] + '\n')
+        out.write('\t\t\tOffset: {:.0f}\n'.format(int(cache[3][i][4], 2)))
+    out.write('\t\tNumber of Hits: {}\n'.format(hit[3]))
+    out.write('\t\tNumber of Misses: {}\n'.format(miss[3]))
+    out.write('\t\tHit Rate: {:.2f}%\n\n'.format((hit[3] / (hit[3] + miss[3]) * 100)))
+
+    out.write('-------------------------------\n')
+    out.write('--------- End Summary ---------\n')
+    out.write('-------------------------------\n\n')
         
 
     print("Complete")
@@ -521,3 +628,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+        
