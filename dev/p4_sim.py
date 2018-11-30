@@ -1,5 +1,5 @@
 # ECE 366 - Project 4
-# Group Members: Joseph de Joya, Martin Cardoza
+# Group Members: Joseph de Joya, Martin Cardona
 
 verbose = True
 
