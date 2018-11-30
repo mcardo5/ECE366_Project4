@@ -1,0 +1,4 @@
+*The way we programmed the code is that you run it in bash terminal 
+-Once you run it, the command window outputs information
+-To store after it runs is to use the command > p4_imem_A1
+-It then creates the output file with all the information
