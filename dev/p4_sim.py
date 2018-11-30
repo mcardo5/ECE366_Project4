@@ -347,8 +347,8 @@ def main():
         # For testing purposes
         #filename = "i_mem_A1.txt"
         #filename = "i_mem_A2.txt"
-        #filename = "i_mem_B1.txt"
-        filename = "i_mem_B2.txt"
+        filename = "i_mem_B1.txt"
+        #filename = "i_mem_B2.txt"
 
         # Check if the file exist
         try:
