@@ -133,7 +133,7 @@ def mips_lw(Rs, Rt, imm, d_mem, register, cache):
     cache[2] = faS2B4
     cache[3] = saS2B8
 
-def mips_beq(Rs, Rt, imm, pc, stall, hazard, register):
+def mips_beq(Rs, Rt, imm, pc, register):
     # Function: if $Rs == $Rt then PC = PC + 4 + imm
     #                         else PC = PC + 4
     # At this point PC = PC + 4, pre calculated. Thus, add imm to PC
@@ -175,13 +175,13 @@ def mips_xor(Rs, Rt, Rd, register):
 
     register[Rd] = '0x' + format(int(''.join(result), 2), '08x')
 
-def instr_exe(instr, register, d_mem, pc, total_pipeline, hazard, multi, cache):
+def instr_exe(instr, register, d_mem, pc, multi, cache):
     # Update pc
     pc = '0x' + format(int(pc, 16) + 4, "04x")
     multi_cpu = multi[0]
     multi_instr = multi[1]
-    total_pipeline = pipe[0]		#keeps track of pipeline cycles
-    total_hazard = hazard[[0],[1]]	#hazard 0 is for a register and 1 is for the dynamic instruction count(DIC)
+    #total_pipeline = pipe[0]		#keeps track of pipeline cycles
+    #total_hazard = hazard[[0],[1]]	#hazard 0 is for a register and 1 is for the dynamic instruction count(DIC)
     
 
     if (instr[0:6] == '000000'):
@@ -192,9 +192,9 @@ def instr_exe(instr, register, d_mem, pc, total_pipeline, hazard, multi, cache):
             # Instruction add
             multi_cpu[1] = multi_cpu[1] + 1
             multi_instr[0] = multi_instr[0] + 1
-            pipe[0] +=1
-            hazard[0] = Rd
-            hazard[1] = instr_count
+            #pipe[0] +=1
+            #hazard[0] = Rd
+            #hazard[1] = instr_count
             mips_add(Rs, Rt, Rd, register)
             if (verbose):
                 print('add ${}, ${}, ${}'.format(Rd, Rs, Rt))
@@ -202,15 +202,15 @@ def instr_exe(instr, register, d_mem, pc, total_pipeline, hazard, multi, cache):
             # Instruction sub
             multi_cpu[1] = multi_cpu[1] + 1
             multi_instr[1] = multi_instr[1] + 1
-            pipe[0] +=1
-            hazard[0] = Rd
-            hazard[1] = instr_count 
+            #pipe[0] +=1
+            #hazard[0] = Rd
+            #hazard[1] = instr_count 
             mips_sub(Rs, Rt, Rd, register)
             if (verbose):
                 print('sub ${}, ${}, ${}'.format(Rd, Rs, Rt))
         elif (instr[26:len(instr)] == '101010'):
             # Instruction slt
-            pipe[0] +=1
+            #pipe[0] +=1
             multi_cpu[1] = multi_cpu[1] + 1
             multi_instr[6] = multi_instr[6] + 1
             mips_slt(Rs, Rt, Rd, register)
@@ -220,9 +220,9 @@ def instr_exe(instr, register, d_mem, pc, total_pipeline, hazard, multi, cache):
             # Instruction xor
             multi_cpu[1] = multi_cpu[1] + 1
             multi_instr[2] = multi_instr[2] + 1
-            pipe[0] +=1
-            hazard[0] = Rd
-            hazard[1] = instr_count
+            #pipe[0] +=1
+            #hazard[0] = Rd
+            #hazard[1] = instr_count
             mips_xor(Rs, Rt, Rd, register)
             if (verbose):
                 print('xor ${}, ${}, ${}'.format(Rd, Rs, Rt))
@@ -234,9 +234,9 @@ def instr_exe(instr, register, d_mem, pc, total_pipeline, hazard, multi, cache):
             # Instruction addi
             multi_cpu[1] = multi_cpu[1] + 1
             multi_instr[3] = multi_instr[3] + 1
-            pipe[0] +=1
-            hazard[0] = Rt
-            hazard[1] = instr_count
+            #pipe[0] +=1
+            #hazard[0] = Rt
+            #hazard[1] = instr_count
             mips_addi(Rs, Rt, imm, register)
             if (verbose):
                 print('addi ${}, ${}, {}'.format(Rt, Rs, imm))
@@ -272,7 +272,7 @@ def instr_exe(instr, register, d_mem, pc, total_pipeline, hazard, multi, cache):
     # Update statistics
     multi[0] = multi_cpu
     multi[1] = multi_instr
-    total_pipeline = pipe[0]
+    #total_pipeline = pipe[0]
     return pc
 
 def twos_comp(val, bits):
@@ -345,9 +345,9 @@ def main():
         print("e.g. i_mem_A1")
         filename = input("Instruction Memory Filename: ")
         # For testing purposes
-        filename = "i_mem_A1.txt"
-        filename = "i_mem_A2.txt"
-        filename = "i_mem_B1.txt"
+        #filename = "i_mem_A1.txt"
+        #filename = "i_mem_A2.txt"
+        #filename = "i_mem_B1.txt"
         filename = "i_mem_B2.txt"
 
         # Check if the file exist
@@ -481,8 +481,8 @@ def main():
     print('\t\tInstruction\t# Cycles\t% Cycle')
     print('\t\tlw\t\t{}\t\t{:.2f}%'.format(multi_instr[7]*5, ((multi_instr[7]*5) / multi_total) * 100))
     print('Pipelined MIPS CPU')
-    print('Total Pipelined Cycles: ' + total_pipeline)
-    print('Hazards Detected: ' + hazard[0] + hazard[1])
+   # print('Total Pipelined Cycles: ' + total_pipeline)
+    #print('Hazards Detected: ' + hazard[0] + hazard[1])
     print('Cache Access Behavior')
     hit = cache[len(cache) - 3]
     miss = cache[len(cache) - 2]

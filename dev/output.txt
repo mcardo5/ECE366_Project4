@@ -1,0 +1,1603 @@
+Choose Instruction Memory to be used in the simulation
+e.g. i_mem_A1
+Instruction Memory Filename: i_mem_B2.txt opened successfully
+
+Instruction Memory
+Addr	Content
+0x0000	0x20010005
+0x0004	0x2002003c
+0x0008	0xac412000
+0x000c	0x2042fffc
+0x0010	0x10400004
+0x0014	0x00210820
+0x0018	0x00010822
+0x001c	0x20210003
+0x0020	0x1063fff9
+0x0024	0x2006003c
+0x0028	0x00002020
+0x002c	0x8c412004
+0x0030	0x00812026
+0x0034	0x8c412008
+0x0038	0x00812026
+0x003c	0x8c41200c
+0x0040	0x00812026
+0x0044	0xac442004
+0x0048	0x00a42826
+0x004c	0x20420004
+0x0050	0x1446fff5
+0x0054	0xac052000
+0x0058	0x1000ffff
+
+Instruction Memory
+Addr	Content
+0x0000	00100000000000010000000000000101
+0x0004	00100000000000100000000000111100
+0x0008	10101100010000010010000000000000
+0x000c	00100000010000101111111111111100
+0x0010	00010000010000000000000000000100
+0x0014	00000000001000010000100000100000
+0x0018	00000000000000010000100000100010
+0x001c	00100000001000010000000000000011
+0x0020	00010000011000111111111111111001
+0x0024	00100000000001100000000000111100
+0x0028	00000000000000000010000000100000
+0x002c	10001100010000010010000000000100
+0x0030	00000000100000010010000000100110
+0x0034	10001100010000010010000000001000
+0x0038	00000000100000010010000000100110
+0x003c	10001100010000010010000000001100
+0x0040	00000000100000010010000000100110
+0x0044	10101100010001000010000000000100
+0x0048	00000000101001000010100000100110
+0x004c	00100000010000100000000000000100
+0x0050	00010100010001101111111111110101
+0x0054	10101100000001010010000000000000
+0x0058	00010000000000001111111111111111
+
+addi $1, $0, 5
+addi $2, $0, 60
+sw $1, 0x2000($2)
+addi $2, $2, -4
+beq $2, $0, 4
+add $1, $1, $1
+sub $1, $0, $1
+addi $1, $1, 3
+beq $3, $3, -7
+sw $1, 0x2000($2)
+addi $2, $2, -4
+beq $2, $0, 4
+add $1, $1, $1
+sub $1, $0, $1
+addi $1, $1, 3
+beq $3, $3, -7
+sw $1, 0x2000($2)
+addi $2, $2, -4
+beq $2, $0, 4
+add $1, $1, $1
+sub $1, $0, $1
+addi $1, $1, 3
+beq $3, $3, -7
+sw $1, 0x2000($2)
+addi $2, $2, -4
+beq $2, $0, 4
+add $1, $1, $1
+sub $1, $0, $1
+addi $1, $1, 3
+beq $3, $3, -7
+sw $1, 0x2000($2)
+addi $2, $2, -4
+beq $2, $0, 4
+add $1, $1, $1
+sub $1, $0, $1
+addi $1, $1, 3
+beq $3, $3, -7
+sw $1, 0x2000($2)
+addi $2, $2, -4
+beq $2, $0, 4
+add $1, $1, $1
+sub $1, $0, $1
+addi $1, $1, 3
+beq $3, $3, -7
+sw $1, 0x2000($2)
+addi $2, $2, -4
+beq $2, $0, 4
+add $1, $1, $1
+sub $1, $0, $1
+addi $1, $1, 3
+beq $3, $3, -7
+sw $1, 0x2000($2)
+addi $2, $2, -4
+beq $2, $0, 4
+add $1, $1, $1
+sub $1, $0, $1
+addi $1, $1, 3
+beq $3, $3, -7
+sw $1, 0x2000($2)
+addi $2, $2, -4
+beq $2, $0, 4
+add $1, $1, $1
+sub $1, $0, $1
+addi $1, $1, 3
+beq $3, $3, -7
+sw $1, 0x2000($2)
+addi $2, $2, -4
+beq $2, $0, 4
+add $1, $1, $1
+sub $1, $0, $1
+addi $1, $1, 3
+beq $3, $3, -7
+sw $1, 0x2000($2)
+addi $2, $2, -4
+beq $2, $0, 4
+add $1, $1, $1
+sub $1, $0, $1
+addi $1, $1, 3
+beq $3, $3, -7
+sw $1, 0x2000($2)
+addi $2, $2, -4
+beq $2, $0, 4
+add $1, $1, $1
+sub $1, $0, $1
+addi $1, $1, 3
+beq $3, $3, -7
+sw $1, 0x2000($2)
+addi $2, $2, -4
+beq $2, $0, 4
+add $1, $1, $1
+sub $1, $0, $1
+addi $1, $1, 3
+beq $3, $3, -7
+sw $1, 0x2000($2)
+addi $2, $2, -4
+beq $2, $0, 4
+add $1, $1, $1
+sub $1, $0, $1
+addi $1, $1, 3
+beq $3, $3, -7
+sw $1, 0x2000($2)
+addi $2, $2, -4
+beq $2, $0, 4
+addi $6, $0, 60
+add $4, $0, $0
+lw $1, 0x2004($2)
+xor $4, $4, $1
+lw $1, 0x2008($2)
+xor $4, $4, $1
+lw $1, 0x200c($2)
+xor $4, $4, $1
+sw $4, 0x2004($2)
+xor $5, $5, $4
+addi $2, $2, 4
+bne $2, $6, -11
+add $4, $0, $0
+lw $1, 0x2004($2)
+xor $4, $4, $1
+lw $1, 0x2008($2)
+xor $4, $4, $1
+lw $1, 0x200c($2)
+xor $4, $4, $1
+sw $4, 0x2004($2)
+xor $5, $5, $4
+addi $2, $2, 4
+bne $2, $6, -11
+add $4, $0, $0
+lw $1, 0x2004($2)
+xor $4, $4, $1
+lw $1, 0x2008($2)
+xor $4, $4, $1
+lw $1, 0x200c($2)
+xor $4, $4, $1
+sw $4, 0x2004($2)
+xor $5, $5, $4
+addi $2, $2, 4
+bne $2, $6, -11
+add $4, $0, $0
+lw $1, 0x2004($2)
+xor $4, $4, $1
+lw $1, 0x2008($2)
+xor $4, $4, $1
+lw $1, 0x200c($2)
+xor $4, $4, $1
+sw $4, 0x2004($2)
+xor $5, $5, $4
+addi $2, $2, 4
+bne $2, $6, -11
+add $4, $0, $0
+lw $1, 0x2004($2)
+xor $4, $4, $1
+lw $1, 0x2008($2)
+xor $4, $4, $1
+lw $1, 0x200c($2)
+xor $4, $4, $1
+sw $4, 0x2004($2)
+xor $5, $5, $4
+addi $2, $2, 4
+bne $2, $6, -11
+add $4, $0, $0
+lw $1, 0x2004($2)
+xor $4, $4, $1
+lw $1, 0x2008($2)
+xor $4, $4, $1
+lw $1, 0x200c($2)
+xor $4, $4, $1
+sw $4, 0x2004($2)
+xor $5, $5, $4
+addi $2, $2, 4
+bne $2, $6, -11
+add $4, $0, $0
+lw $1, 0x2004($2)
+xor $4, $4, $1
+lw $1, 0x2008($2)
+xor $4, $4, $1
+lw $1, 0x200c($2)
+xor $4, $4, $1
+sw $4, 0x2004($2)
+xor $5, $5, $4
+addi $2, $2, 4
+bne $2, $6, -11
+add $4, $0, $0
+lw $1, 0x2004($2)
+xor $4, $4, $1
+lw $1, 0x2008($2)
+xor $4, $4, $1
+lw $1, 0x200c($2)
+xor $4, $4, $1
+sw $4, 0x2004($2)
+xor $5, $5, $4
+addi $2, $2, 4
+bne $2, $6, -11
+add $4, $0, $0
+lw $1, 0x2004($2)
+xor $4, $4, $1
+lw $1, 0x2008($2)
+xor $4, $4, $1
+lw $1, 0x200c($2)
+xor $4, $4, $1
+sw $4, 0x2004($2)
+xor $5, $5, $4
+addi $2, $2, 4
+bne $2, $6, -11
+add $4, $0, $0
+lw $1, 0x2004($2)
+xor $4, $4, $1
+lw $1, 0x2008($2)
+xor $4, $4, $1
+lw $1, 0x200c($2)
+xor $4, $4, $1
+sw $4, 0x2004($2)
+xor $5, $5, $4
+addi $2, $2, 4
+bne $2, $6, -11
+add $4, $0, $0
+lw $1, 0x2004($2)
+xor $4, $4, $1
+lw $1, 0x2008($2)
+xor $4, $4, $1
+lw $1, 0x200c($2)
+xor $4, $4, $1
+sw $4, 0x2004($2)
+xor $5, $5, $4
+addi $2, $2, 4
+bne $2, $6, -11
+add $4, $0, $0
+lw $1, 0x2004($2)
+xor $4, $4, $1
+lw $1, 0x2008($2)
+xor $4, $4, $1
+lw $1, 0x200c($2)
+xor $4, $4, $1
+sw $4, 0x2004($2)
+xor $5, $5, $4
+addi $2, $2, 4
+bne $2, $6, -11
+add $4, $0, $0
+lw $1, 0x2004($2)
+xor $4, $4, $1
+lw $1, 0x2008($2)
+xor $4, $4, $1
+lw $1, 0x200c($2)
+xor $4, $4, $1
+sw $4, 0x2004($2)
+xor $5, $5, $4
+addi $2, $2, 4
+bne $2, $6, -11
+add $4, $0, $0
+lw $1, 0x2004($2)
+xor $4, $4, $1
+lw $1, 0x2008($2)
+xor $4, $4, $1
+lw $1, 0x200c($2)
+xor $4, $4, $1
+sw $4, 0x2004($2)
+xor $5, $5, $4
+addi $2, $2, 4
+bne $2, $6, -11
+add $4, $0, $0
+lw $1, 0x2004($2)
+xor $4, $4, $1
+lw $1, 0x2008($2)
+xor $4, $4, $1
+lw $1, 0x200c($2)
+xor $4, $4, $1
+sw $4, 0x2004($2)
+xor $5, $5, $4
+addi $2, $2, 4
+bne $2, $6, -11
+sw $5, 0x2000($0)
+beq $0, $0, -1
+
+-------------------------
+---------Summary---------
+-------------------------
+PC: 0x0058
+Dynamic Instruction Count: 271
+
+Registers
+Number	Value
+0	0x00000000
+1	0x00000000
+2	0x0000003c
+3	0x00000000
+4	0x00000005
+5	0x00014ccc
+6	0x0000003c
+7	0x00000000
+
+Multi-cycle MIPS CPU
+	i. Total number of cycles: 1084
+		Instruction Length	# Cycles	% Cycle
+		3 Cycles		135		12.45%
+		4 Cycles		724		66.79%
+		5 Cycles		225		20.76%
+	ii. Instruction Information
+	3 Cycle Instructions:
+		Instruction	# Cycles	% Cycle
+		beq		90		8.30%
+		bne		45		4.15%
+	4 Cycle Instructions:
+		Instruction	# Cycles	% Cycle
+		add		116		10.70%
+		sub		56		5.17%
+		xor		240		22.14%
+		addi		188		17.34%
+		slt		0		0.00%
+		sw		124		11.44%
+	5 Cycle Instructions:
+		Instruction	# Cycles	% Cycle
+		lw		225		20.76%
+Pipelined MIPS CPU
+Cache Access Behavior
+	a. Direct Mapped Cache, block size: 4 words, number of blocks: 2
+	Cache log
+		lw access: 1
+			Mem Addr: 0x2004
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 0
+			Offset: 1
+		lw access: 2
+			Mem Addr: 0x2008
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 0
+			Offset: 2
+		lw access: 3
+			Mem Addr: 0x200c
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 0
+			Offset: 3
+		lw access: 4
+			Mem Addr: 0x2008
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 0
+			Offset: 2
+		lw access: 5
+			Mem Addr: 0x200c
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 0
+			Offset: 3
+		lw access: 6
+			Mem Addr: 0x2010
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 0
+		lw access: 7
+			Mem Addr: 0x200c
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 0
+			Offset: 3
+		lw access: 8
+			Mem Addr: 0x2010
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 0
+		lw access: 9
+			Mem Addr: 0x2014
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 1
+		lw access: 10
+			Mem Addr: 0x2010
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 0
+		lw access: 11
+			Mem Addr: 0x2014
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 1
+		lw access: 12
+			Mem Addr: 0x2018
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 2
+		lw access: 13
+			Mem Addr: 0x2014
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 1
+		lw access: 14
+			Mem Addr: 0x2018
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 2
+		lw access: 15
+			Mem Addr: 0x201c
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 3
+		lw access: 16
+			Mem Addr: 0x2018
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 2
+		lw access: 17
+			Mem Addr: 0x201c
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 3
+		lw access: 18
+			Mem Addr: 0x2020
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 0
+		lw access: 19
+			Mem Addr: 0x201c
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 3
+		lw access: 20
+			Mem Addr: 0x2020
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 0
+		lw access: 21
+			Mem Addr: 0x2024
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 1
+		lw access: 22
+			Mem Addr: 0x2020
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 0
+		lw access: 23
+			Mem Addr: 0x2024
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 1
+		lw access: 24
+			Mem Addr: 0x2028
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 2
+		lw access: 25
+			Mem Addr: 0x2024
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 1
+		lw access: 26
+			Mem Addr: 0x2028
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 2
+		lw access: 27
+			Mem Addr: 0x202c
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 3
+		lw access: 28
+			Mem Addr: 0x2028
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 2
+		lw access: 29
+			Mem Addr: 0x202c
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 3
+		lw access: 30
+			Mem Addr: 0x2030
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 0
+		lw access: 31
+			Mem Addr: 0x202c
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 3
+		lw access: 32
+			Mem Addr: 0x2030
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 0
+		lw access: 33
+			Mem Addr: 0x2034
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 1
+		lw access: 34
+			Mem Addr: 0x2030
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 0
+		lw access: 35
+			Mem Addr: 0x2034
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 1
+		lw access: 36
+			Mem Addr: 0x2038
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 2
+		lw access: 37
+			Mem Addr: 0x2034
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 1
+		lw access: 38
+			Mem Addr: 0x2038
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 2
+		lw access: 39
+			Mem Addr: 0x203c
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 3
+		lw access: 40
+			Mem Addr: 0x2038
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 2
+		lw access: 41
+			Mem Addr: 0x203c
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 3
+		lw access: 42
+			Mem Addr: 0x2040
+			Valid bit: 0
+			Tag: 00100000010
+			Blk Index: 0
+			Offset: 0
+		lw access: 43
+			Mem Addr: 0x203c
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 3
+		lw access: 44
+			Mem Addr: 0x2040
+			Valid bit: 1
+			Tag: 00100000010
+			Blk Index: 0
+			Offset: 0
+		lw access: 45
+			Mem Addr: 0x2044
+			Valid bit: 0
+			Tag: 00100000010
+			Blk Index: 0
+			Offset: 1
+		Number of Hits: 31
+		Number of Misses: 14
+		Hit Rate: 68.89%
+	b. Direct Mapped Cache, block size: 2 words, number of blocks: 4
+	Cache log
+		lw access: 1
+			Mem Addr: 0x2004
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 0
+			Offset: 1
+		lw access: 2
+			Mem Addr: 0x2008
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 0
+		lw access: 3
+			Mem Addr: 0x200c
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 1
+		lw access: 4
+			Mem Addr: 0x2008
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 0
+		lw access: 5
+			Mem Addr: 0x200c
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 1
+		lw access: 6
+			Mem Addr: 0x2010
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 2
+			Offset: 0
+		lw access: 7
+			Mem Addr: 0x200c
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 1
+			Offset: 1
+		lw access: 8
+			Mem Addr: 0x2010
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 2
+			Offset: 0
+		lw access: 9
+			Mem Addr: 0x2014
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 2
+			Offset: 1
+		lw access: 10
+			Mem Addr: 0x2010
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 2
+			Offset: 0
+		lw access: 11
+			Mem Addr: 0x2014
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 2
+			Offset: 1
+		lw access: 12
+			Mem Addr: 0x2018
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 3
+			Offset: 0
+		lw access: 13
+			Mem Addr: 0x2014
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 2
+			Offset: 1
+		lw access: 14
+			Mem Addr: 0x2018
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 3
+			Offset: 0
+		lw access: 15
+			Mem Addr: 0x201c
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 3
+			Offset: 1
+		lw access: 16
+			Mem Addr: 0x2018
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 3
+			Offset: 0
+		lw access: 17
+			Mem Addr: 0x201c
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 3
+			Offset: 1
+		lw access: 18
+			Mem Addr: 0x2020
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 0
+		lw access: 19
+			Mem Addr: 0x201c
+			Valid bit: 1
+			Tag: 00100000000
+			Blk Index: 3
+			Offset: 1
+		lw access: 20
+			Mem Addr: 0x2020
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 0
+		lw access: 21
+			Mem Addr: 0x2024
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 1
+		lw access: 22
+			Mem Addr: 0x2020
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 0
+		lw access: 23
+			Mem Addr: 0x2024
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 1
+		lw access: 24
+			Mem Addr: 0x2028
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 0
+		lw access: 25
+			Mem Addr: 0x2024
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 0
+			Offset: 1
+		lw access: 26
+			Mem Addr: 0x2028
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 0
+		lw access: 27
+			Mem Addr: 0x202c
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 1
+		lw access: 28
+			Mem Addr: 0x2028
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 0
+		lw access: 29
+			Mem Addr: 0x202c
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 1
+		lw access: 30
+			Mem Addr: 0x2030
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 2
+			Offset: 0
+		lw access: 31
+			Mem Addr: 0x202c
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 1
+			Offset: 1
+		lw access: 32
+			Mem Addr: 0x2030
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 2
+			Offset: 0
+		lw access: 33
+			Mem Addr: 0x2034
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 2
+			Offset: 1
+		lw access: 34
+			Mem Addr: 0x2030
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 2
+			Offset: 0
+		lw access: 35
+			Mem Addr: 0x2034
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 2
+			Offset: 1
+		lw access: 36
+			Mem Addr: 0x2038
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 3
+			Offset: 0
+		lw access: 37
+			Mem Addr: 0x2034
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 2
+			Offset: 1
+		lw access: 38
+			Mem Addr: 0x2038
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 3
+			Offset: 0
+		lw access: 39
+			Mem Addr: 0x203c
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 3
+			Offset: 1
+		lw access: 40
+			Mem Addr: 0x2038
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 3
+			Offset: 0
+		lw access: 41
+			Mem Addr: 0x203c
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 3
+			Offset: 1
+		lw access: 42
+			Mem Addr: 0x2040
+			Valid bit: 0
+			Tag: 00100000010
+			Blk Index: 0
+			Offset: 0
+		lw access: 43
+			Mem Addr: 0x203c
+			Valid bit: 1
+			Tag: 00100000001
+			Blk Index: 3
+			Offset: 1
+		lw access: 44
+			Mem Addr: 0x2040
+			Valid bit: 1
+			Tag: 00100000010
+			Blk Index: 0
+			Offset: 0
+		lw access: 45
+			Mem Addr: 0x2044
+			Valid bit: 0
+			Tag: 00100000010
+			Blk Index: 0
+			Offset: 1
+		Number of Hits: 21
+		Number of Misses: 24
+		Hit Rate: 46.67%
+	c. Fully-Associated Cache, block size: 2 words, number of blocks: 4
+		lw access: 1
+			Mem Addr: 0x2004
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: Empty
+			Way/Block 3 Tag: Empty
+			Way/Block 4 Tag: Empty
+			Offset: 1
+		lw access: 2
+			Mem Addr: 0x2008
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: Empty
+			Way/Block 4 Tag: Empty
+			Offset: 0
+		lw access: 3
+			Mem Addr: 0x200c
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: Empty
+			Way/Block 4 Tag: Empty
+			Offset: 1
+		lw access: 4
+			Mem Addr: 0x2008
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: Empty
+			Way/Block 4 Tag: Empty
+			Offset: 0
+		lw access: 5
+			Mem Addr: 0x200c
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: Empty
+			Way/Block 4 Tag: Empty
+			Offset: 1
+		lw access: 6
+			Mem Addr: 0x2010
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: Empty
+			Offset: 0
+		lw access: 7
+			Mem Addr: 0x200c
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: Empty
+			Offset: 1
+		lw access: 8
+			Mem Addr: 0x2010
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: Empty
+			Offset: 0
+		lw access: 9
+			Mem Addr: 0x2014
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: Empty
+			Offset: 1
+		lw access: 10
+			Mem Addr: 0x2010
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: Empty
+			Offset: 0
+		lw access: 11
+			Mem Addr: 0x2014
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: Empty
+			Offset: 1
+		lw access: 12
+			Mem Addr: 0x2018
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 13
+			Mem Addr: 0x2014
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		lw access: 14
+			Mem Addr: 0x2018
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 15
+			Mem Addr: 0x201c
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		lw access: 16
+			Mem Addr: 0x2018
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 17
+			Mem Addr: 0x201c
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		lw access: 18
+			Mem Addr: 0x2020
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000100
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 19
+			Mem Addr: 0x201c
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000100
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		lw access: 20
+			Mem Addr: 0x2020
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000100
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 21
+			Mem Addr: 0x2024
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000100
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		lw access: 22
+			Mem Addr: 0x2020
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000100
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 23
+			Mem Addr: 0x2024
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000100
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		lw access: 24
+			Mem Addr: 0x2028
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000101
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 25
+			Mem Addr: 0x2024
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000100
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		lw access: 26
+			Mem Addr: 0x2028
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000101
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 27
+			Mem Addr: 0x202c
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000101
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		lw access: 28
+			Mem Addr: 0x2028
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000101
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 29
+			Mem Addr: 0x202c
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000101
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		lw access: 30
+			Mem Addr: 0x2030
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000110
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 31
+			Mem Addr: 0x202c
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000101
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		lw access: 32
+			Mem Addr: 0x2030
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000110
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 33
+			Mem Addr: 0x2034
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000110
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		lw access: 34
+			Mem Addr: 0x2030
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000110
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 35
+			Mem Addr: 0x2034
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000110
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		lw access: 36
+			Mem Addr: 0x2038
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000111
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 37
+			Mem Addr: 0x2034
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000110
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		lw access: 38
+			Mem Addr: 0x2038
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000111
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 39
+			Mem Addr: 0x203c
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000111
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		lw access: 40
+			Mem Addr: 0x2038
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000111
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 41
+			Mem Addr: 0x203c
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000111
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		lw access: 42
+			Mem Addr: 0x2040
+			Valid bit: 0
+			Way/Block 1 Tag: 0010000001000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 43
+			Mem Addr: 0x203c
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000000111
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		lw access: 44
+			Mem Addr: 0x2040
+			Valid bit: 1
+			Way/Block 1 Tag: 0010000001000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 0
+		lw access: 45
+			Mem Addr: 0x2044
+			Valid bit: 0
+			Way/Block 1 Tag: 0010000001000
+			Way/Block 2 Tag: 0010000000001
+			Way/Block 3 Tag: 0010000000010
+			Way/Block 4 Tag: 0010000000011
+			Offset: 1
+		Number of Hits: 27
+		Number of Misses: 18
+		Hit Rate: 60.00%
+	d. 2-Way Set-Associative Cache, block size: 2 words, number of blocks: 8, number of sets: 4
+		lw access: 1
+			Mem Addr: 0x2004
+			Valid bit: 1
+			Set Index: 0
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 1
+		lw access: 2
+			Mem Addr: 0x2008
+			Valid bit: 1
+			Set Index: 1
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 0
+		lw access: 3
+			Mem Addr: 0x200c
+			Valid bit: 1
+			Set Index: 1
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 1
+		lw access: 4
+			Mem Addr: 0x2008
+			Valid bit: 1
+			Set Index: 1
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 0
+		lw access: 5
+			Mem Addr: 0x200c
+			Valid bit: 1
+			Set Index: 1
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 1
+		lw access: 6
+			Mem Addr: 0x2010
+			Valid bit: 1
+			Set Index: 2
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 0
+		lw access: 7
+			Mem Addr: 0x200c
+			Valid bit: 1
+			Set Index: 1
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 1
+		lw access: 8
+			Mem Addr: 0x2010
+			Valid bit: 1
+			Set Index: 2
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 0
+		lw access: 9
+			Mem Addr: 0x2014
+			Valid bit: 1
+			Set Index: 2
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 1
+		lw access: 10
+			Mem Addr: 0x2010
+			Valid bit: 1
+			Set Index: 2
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 0
+		lw access: 11
+			Mem Addr: 0x2014
+			Valid bit: 1
+			Set Index: 2
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 1
+		lw access: 12
+			Mem Addr: 0x2018
+			Valid bit: 1
+			Set Index: 3
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 0
+		lw access: 13
+			Mem Addr: 0x2014
+			Valid bit: 1
+			Set Index: 2
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 1
+		lw access: 14
+			Mem Addr: 0x2018
+			Valid bit: 1
+			Set Index: 3
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 0
+		lw access: 15
+			Mem Addr: 0x201c
+			Valid bit: 1
+			Set Index: 3
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 1
+		lw access: 16
+			Mem Addr: 0x2018
+			Valid bit: 1
+			Set Index: 3
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 0
+		lw access: 17
+			Mem Addr: 0x201c
+			Valid bit: 1
+			Set Index: 3
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 1
+		lw access: 18
+			Mem Addr: 0x2020
+			Valid bit: 1
+			Set Index: 0
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 0
+		lw access: 19
+			Mem Addr: 0x201c
+			Valid bit: 1
+			Set Index: 3
+			Way A Tag: 00100000000
+			Way B Tag: Empty
+			Offset: 1
+		lw access: 20
+			Mem Addr: 0x2020
+			Valid bit: 1
+			Set Index: 0
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 0
+		lw access: 21
+			Mem Addr: 0x2024
+			Valid bit: 1
+			Set Index: 0
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 1
+		lw access: 22
+			Mem Addr: 0x2020
+			Valid bit: 1
+			Set Index: 0
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 0
+		lw access: 23
+			Mem Addr: 0x2024
+			Valid bit: 1
+			Set Index: 0
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 1
+		lw access: 24
+			Mem Addr: 0x2028
+			Valid bit: 1
+			Set Index: 1
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 0
+		lw access: 25
+			Mem Addr: 0x2024
+			Valid bit: 1
+			Set Index: 0
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 1
+		lw access: 26
+			Mem Addr: 0x2028
+			Valid bit: 1
+			Set Index: 1
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 0
+		lw access: 27
+			Mem Addr: 0x202c
+			Valid bit: 1
+			Set Index: 1
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 1
+		lw access: 28
+			Mem Addr: 0x2028
+			Valid bit: 1
+			Set Index: 1
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 0
+		lw access: 29
+			Mem Addr: 0x202c
+			Valid bit: 1
+			Set Index: 1
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 1
+		lw access: 30
+			Mem Addr: 0x2030
+			Valid bit: 1
+			Set Index: 2
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 0
+		lw access: 31
+			Mem Addr: 0x202c
+			Valid bit: 1
+			Set Index: 1
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 1
+		lw access: 32
+			Mem Addr: 0x2030
+			Valid bit: 1
+			Set Index: 2
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 0
+		lw access: 33
+			Mem Addr: 0x2034
+			Valid bit: 1
+			Set Index: 2
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 1
+		lw access: 34
+			Mem Addr: 0x2030
+			Valid bit: 1
+			Set Index: 2
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 0
+		lw access: 35
+			Mem Addr: 0x2034
+			Valid bit: 1
+			Set Index: 2
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 1
+		lw access: 36
+			Mem Addr: 0x2038
+			Valid bit: 1
+			Set Index: 3
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 0
+		lw access: 37
+			Mem Addr: 0x2034
+			Valid bit: 1
+			Set Index: 2
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 1
+		lw access: 38
+			Mem Addr: 0x2038
+			Valid bit: 1
+			Set Index: 3
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 0
+		lw access: 39
+			Mem Addr: 0x203c
+			Valid bit: 1
+			Set Index: 3
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 1
+		lw access: 40
+			Mem Addr: 0x2038
+			Valid bit: 1
+			Set Index: 3
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 0
+		lw access: 41
+			Mem Addr: 0x203c
+			Valid bit: 1
+			Set Index: 3
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 1
+		lw access: 42
+			Mem Addr: 0x2040
+			Valid bit: 0
+			Set Index: 0
+			Way A Tag: 00100000010
+			Way B Tag: 00100000001
+			Offset: 0
+		lw access: 43
+			Mem Addr: 0x203c
+			Valid bit: 1
+			Set Index: 3
+			Way A Tag: 00100000000
+			Way B Tag: 00100000001
+			Offset: 1
+		lw access: 44
+			Mem Addr: 0x2040
+			Valid bit: 1
+			Set Index: 0
+			Way A Tag: 00100000010
+			Way B Tag: 00100000001
+			Offset: 0
+		lw access: 45
+			Mem Addr: 0x2044
+			Valid bit: 0
+			Set Index: 0
+			Way A Tag: 00100000010
+			Way B Tag: 00100000001
+			Offset: 1
+		Number of Hits: 35
+		Number of Misses: 10
+		Hit Rate: 77.78%
+Complete
